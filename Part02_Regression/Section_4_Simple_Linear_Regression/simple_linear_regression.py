@@ -46,3 +46,24 @@ from sklearn.linear_model import LinearRegression
 
 regression = LinearRegression()
 regression.fit(x_train, y_train)
+
+# Predecir el conjunto de test
+y_pred = regression.predict(x_test)
+
+# Visualizar los resultados de entrenamiento
+plt.scatter(x_train, y_train, color = 'red')
+plt.plot(x_train, regression.predict(x_train), color = 'blue')
+plt.title('Sueldo vs años de experiencia (Conjunto de entrenamiento)')
+plt.xlabel('Años de experiencia')
+plt.ylabel('Sueldo (en $)')
+plt.show()
+
+# Visualizar los resultados de test
+plt.scatter(x_test, y_test, color = 'red')
+plt.plot(x_train, regression.predict(x_train), color = 'blue')
+plt.title('Sueldo vs años de experiencia (Conjunto de testing)')
+plt.xlabel('Años de experiencia')
+plt.ylabel('Sueldo (en $)')
+plt.show()
+
+

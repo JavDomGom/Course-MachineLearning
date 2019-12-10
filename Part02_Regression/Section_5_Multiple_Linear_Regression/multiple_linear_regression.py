@@ -76,3 +76,18 @@ from sklearn.linear_model import LinearRegression
 regression = LinearRegression()
 regression.fit(x_train, y_train)
 
+# Predicción de los resultados en el conjunto de testing
+y_pred = regression.predict(x_test)
+
+# Construir el modelo óptimo de RLM utilizando la eliminación hacia atrás
+import statsmodels.formula.api as sm
+x = np.append(arr = np.ones((50, 1)).astype(int), values = x, axis = 1)
+x_opt = x[:, [0, 1, 2, 3, 4, 5]]
+SL = 0.05
+regression_OLS = sm.ols(endog = y, exog = x_opt).fit()
+
+
+
+
+
+

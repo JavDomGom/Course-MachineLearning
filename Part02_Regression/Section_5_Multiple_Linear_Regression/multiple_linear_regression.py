@@ -81,12 +81,27 @@ y_pred = regression.predict(x_test)
 
 # Construir el modelo óptimo de RLM utilizando la eliminación hacia atrás
 import statsmodels.formula.api as sm
-x = np.append(arr = np.ones((50, 1)).astype(int), values = x, axis = 1)
-x_opt = x[:, [0, 1, 2, 3, 4, 5]]
+x = np.append(arr = np.ones((50,1)).astype(int), values = x, axis = 1)
 SL = 0.05
-regression_OLS = sm.ols(endog = y, exog = x_opt).fit()
 
+x_opt = x[:, [0, 1, 2, 3, 4, 5]]
+regression_OLS = sm.ols(endog = y, exog = x_opt.tolist()).fit()
 
+x_opt = x[:, [0, 1, 3, 4, 5]]
+regression_OLS = sm.ols(endog = y, exog = x_opt.tolist()).fit()
+regression_OLS.summary()
+
+x_opt = x[:, [0, 3, 4, 5]]
+regression_OLS = sm.ols(endog = y, exog = x_opt.tolist()).fit()
+regression_OLS.summary()
+
+x_opt = x[:, [0, 3, 5]]
+regression_OLS = sm.ols(endog = y, exog = x_opt.tolist()).fit()
+regression_OLS.summary()
+
+X_opt = x[:, [0, 3]]
+regression_OLS = sm.ols(endog = y, exog = x_opt.tolist()).fit()
+regression_OLS.summary()
 
 
 

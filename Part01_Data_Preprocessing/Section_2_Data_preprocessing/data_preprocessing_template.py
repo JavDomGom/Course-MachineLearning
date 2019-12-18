@@ -28,14 +28,12 @@ este ejemplo se ha utilizado el número 0, pero se puede poner cualquiera.
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
 
 
-# =============================================================================
-# # Escalado de variables
-# from sklearn.preprocessing import StandardScaler
-# 
-# ## Instancia objeto de la clase StandardScaler
-# sc_x = StandardScaler()
-# 
-# ## Se escalan los valores de la matriz de datos "x"
-# x_train = sc_x.fit_transform(x_train)
-# x_test = sc_x.transform(x_test)
-# =============================================================================
+# Escalado de variables
+'''from sklearn.preprocessing import StandardScaler
+
+## Instancia objeto de la clase StandardScaler
+sc_x = StandardScaler()
+
+## Se escalan los valores de la matriz de datos "x"
+x_train = sc_x.fit_transform(x_train)
+x_test = sc_x.transform(x_test)'''

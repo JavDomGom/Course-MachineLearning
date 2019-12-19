@@ -33,7 +33,7 @@ lin_reg.fit(x, y)
 
 # Ajustar la regresión plonómica con el dataset
 from sklearn.preprocessing import PolynomialFeatures
-poly_reg = PolynomialFeatures(degree = 4)
+poly_reg = PolynomialFeatures(degree = 7)
 x_poly = poly_reg.fit_transform(x)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(x_poly, y)
@@ -55,3 +55,9 @@ plt.title('Modelo de regresión polinómica')
 plt.xlabel('Posición del empleado')
 plt.ylabel('Sueldo (en $)')
 plt.show()
+
+# Predicción de nuestros modelos
+lin_reg.predict([[6.5]])
+lin_reg_2.predict(poly_reg.fit_transform([[6.5]]))
+
+
